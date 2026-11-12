@@ -1,0 +1,29 @@
+Dataset shape: (5000, 6)
+Failure rate: 21.1%
+   temperature  vibration   pressure  rotation_speed  operating_hours  failure
+0    78.047171   0.461307  30.881385     1639.277978      3627.628403        0
+1    64.600159   0.455077  34.495617     1644.203724      9424.064360        1
+2    82.504512   0.395501  22.638647     1612.486938      2552.022002        0
+3    84.405647   0.564272  28.573509     1566.016605      8349.611955        1
+4    55.489648   0.535197  34.145766     1561.923946      8968.556283        0 
+
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+     Healthy       0.91      0.87      0.89       789
+     Failure       0.59      0.68      0.63       211
+
+    accuracy                           0.83      1000
+   macro avg       0.75      0.78      0.76      1000
+weighted avg       0.84      0.83      0.84      1000
+
+Confusion Matrix:
+ [[689 100]
+ [ 68 143]]
+ROC-AUC: 0.874
+
+Saved plot: feature_importance.png
+Saved model: maintenance_model.joblib
+
+New machine reading -> failure probability: 93.5%
+Action: SCHEDULE MAINTENANCE
